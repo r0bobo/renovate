@@ -47,6 +47,7 @@ export class BazelDatasource extends Datasource {
         url,
         BazelModuleMetadata,
       );
+      result.sourceUrl = metadata.homepage;
       result.releases = metadata.versions
         .map((v) => new BzlmodVersion(v))
         .sort(BzlmodVersion.defaultCompare)
